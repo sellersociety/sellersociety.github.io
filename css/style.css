@@ -428,12 +428,13 @@ header {
 }
 
 .featured-center-container {
-  width: 940px;
+  width: 800px;
 }
 
 .featured-header-content {
   display: flex;
   align-items: flex-end;
+  justify-content: space-around;
   margin-bottom: 24px;
 }
 
