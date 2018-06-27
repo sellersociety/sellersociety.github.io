@@ -4,7 +4,7 @@
 $(function() {
   $.ajax({
     url:
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQsZrHno8b9NbjYPLBG83BsvH39Z4LUfc3zGGOevLGDE_GCEUxDBlYIQTI9YjSekCvglRNe5VTP74uo/pub?output=csv",
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQCRb80LuurEBqCEruiOBTCvLXGhJlm6iJQZ0zNHXO7jac1mnKchGr8zNbI1XRGWmQVowwWJqCJYBw6/pub?output=csv",
 
     success: function(data) {
       // Convert CSV data to JS Object (JSON). This uses jquery.csv.min.js
@@ -13,7 +13,7 @@ $(function() {
       x = 0;
       artist_data.forEach(function() {
         // Skip this user if the 'is_visible' field is empty or 0 (assuming you have an is_visible field to hide/show people)
-        if (artist_data[x]["Visible"] == 0) return;
+        // if(artist_data[x]['is_visible'] == 0) return;
 
         // Extract seller image id
         seller_string = artist_data[x]["Seller Photo"];
@@ -59,7 +59,7 @@ $(function() {
                 </div>
                 <div class="seller-object-bottom">
                     <div class="seller-name">
-                    <div class="seller-roster-alumni"></div><h2 class="blue">` +
+                        <h2 class="blue">` +
             artist_data[x]["Seller Name"] +
             `</h2>
                     </div>
@@ -76,14 +76,14 @@ $(function() {
                     <div class="seller-buttons">
                         <a href="` +
             artist_data[x]["Seller Portfolio"] +
-            `" target="_blank" class="no-underline">
+            `" class="no-underline">
                             <div class="seller-portfolio">
                                 <p class="bold black">Seller Portfolio</p>
                             </div>
                         </a>
                         <a href=` +
             artist_data[x]["Store Link"] +
-            ` target="_blank" class="no-underline">
+            ` class="no-underline">
                             <div class="seller-shop">
                                 <p class="bold white">Go To Shop</p>
                             </div>
@@ -92,11 +92,6 @@ $(function() {
                 </div>
             </div>`
         );
-
-        //Add alumni badge if needed
-        if (artist_data[x]["Alumni"] == 1) {
-          $(".seller-roster-alumni").append(`<img src="img/alumni.png">`);
-        }
 
         // Add 1 to x to move to next row of spreadsheet
         x = x + 1;
@@ -163,6 +158,20 @@ $(function() {
             featured_data[0]["Featured Seller Title"] +
             `
     </p>`
+        );
+        $(".featured-header-right").append(
+          `
+          <div class="featured-carousel fotorama" data-loop="true" data-keyboard="true" data-arrows="always" data-fit="cover" data-width="300px" data-height="300px">
+            <img src="https://drive.google.com/thumbnail?id=` +
+            featured_img1_id +
+            `&sz=w300-h300">
+            <img src="https://drive.google.com/thumbnail?id=` +
+            featured_img2_id +
+            `&sz=w300-h300">
+            <img src="https://drive.google.com/thumbnail?id=` +
+            featured_img3_id +
+            `&sz=w300-h300">
+            </div>`
         );
         $(".featured-name-csv").append(
           `

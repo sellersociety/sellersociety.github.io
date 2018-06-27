@@ -146,7 +146,7 @@ p {
   font-family: "Roboto Slab", serif;
   font-weight: 400;
   font-size: 0.9em;
-  line-height: 1.45em;
+  line-height: 1.3em;
 }
 
 h1 {
@@ -254,20 +254,6 @@ nav {
 }
 
 /* header */
-footer {
-  height: 200px;
-  width: 100%;
-  background-color: #1988ff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.psugd-logo {
-  width: 100px;
-}
-
-/* header */
 header {
   margin-top: 24px;
   display: flex;
@@ -315,7 +301,6 @@ header {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-  background-color: #d7eaff;
 }
 
 .header-photo img {
@@ -371,7 +356,6 @@ header {
   -o-border-radius: 50%;
   border-radius: 50%;
   border: 4px solid #1988ff;
-  background-color: #d7eaff;
 }
 
 .seller-photo img {
@@ -389,14 +373,6 @@ header {
 
 .seller-name {
   margin-top: 4px;
-  display: flex;
-}
-
-.seller-roster-alumni img {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-  margin-top: 12px;
 }
 
 .seller-tagline {
@@ -405,7 +381,7 @@ header {
 
 .seller-description {
   margin-top: 6px;
-  height: 88px;
+  height: 66px;
 }
 
 .seller-buttons {
@@ -459,46 +435,15 @@ header {
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
-  margin-bottom: 48px;
-  position: relative;
+  margin-bottom: 24px;
 }
 
-.featured-header-content .header-photo {
-  position: absolute;
-  top: 204px;
+.featured-header-left {
+  margin-right: 24px;
 }
 
-.featured-background-photo {
-  z-index: -100;
-}
-
-.featured-photo {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  background-color: #d7eaff;
-}
-
-.featured-photo img {
-  display: inline;
-  margin: 0 auto;
-  object-fit: cover;
-  width: 800px;
-  height: 480px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-}
-
-.featured-photo1-csv img,
-.featured-photo2-csv img {
-  width: auto;
-  height: 100%;
+.featured-header-right {
+  height: 300px;
 }
 
 .featured-name-csv {
@@ -509,24 +454,10 @@ header {
   margin-bottom: 16px;
 }
 
-.featured-body-title .seller-feature-title {
-  margin-bottom: 0px;
-}
-
-.featured-bio-csv,
-.featured-questions-csv,
-.featured-sign-off-csv {
-  margin-top: 32px;
-  margin-bottom: 32px;
-}
-
-.featured-question {
-  margin-bottom: 32px;
-}
-
 .featured-buttons {
   display: flex;
   width: 100%;
+  margin-top: 32px;
   margin-bottom: 64px;
   flex-direction: row;
   align-items: flex-start;
@@ -534,78 +465,6 @@ header {
 
 .featured-buttons .seller-portfolio {
   margin-right: 12px;
-}
-
-/* About Page */
-.about-bg {
-  background-image: url("../img/about-bg.jpg");
-  background-position: center;
-  background-size: cover;
-}
-
-.about-header {
-  width: 860px;
-  margin-bottom: 64px;
-}
-
-.about-icon-block {
-  margin-top: 64px;
-  margin-bottom: 64px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.about-icon-list {
-  width: 800px;
-  display: flex;
-  justify-content: space-around;
-}
-
-.about-icon {
-  width: 160px;
-  text-align: center;
-}
-
-.about-icon img {
-  height: 160px;
-  width: 160px;
-}
-
-.about-icon p {
-  margin-top: 12px;
-}
-
-.about-join-block {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 128px;
-}
-
-.about-join-block p {
-  text-align: center;
-}
-
-.about-join-button {
-  margin-top: 12px;
-  width: 187px;
-  height: 50px;
-  background-color: #1988ff;
-  -webkit-border-radius: 24px;
-  -moz-border-radius: 24px;
-  border-radius: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.about-join-button h3 {
-  text-align: center;
-  color: white;
-  letter-spacing: 0.08em;
-  font-weight: 400;
 }
 
 /* Media Queries */
@@ -623,6 +482,22 @@ header {
   h1 {
     font-size: 2.3em;
     line-height: 1.2em;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .featured-container {
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 90%;
+  }
+
+  .featured-center-container {
+    width: 100%;
+  }
+
+  .featured-header-content {
+    align-items: flex-end;
   }
 }
 
@@ -724,31 +599,20 @@ header {
   .seller-shop {
     width: 140px;
   }
+}
 
-  .featured-container {
-    padding-left: 32px;
-    padding-right: 32px;
+@media only screen and (max-width: 680px) {
+  .featured-header-content {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
   }
 
-  .featured-center-container {
-    width: 100%;
+  .featured-header-left {
+    margin-right: 0;
   }
 
-  .about-header {
-    width: 100%;
-  }
-
-  .about-icon-list {
-    width: 100%;
-  }
-
-  .about-icon {
-    width: 29%;
-    text-align: center;
-  }
-
-  .about-icon img {
-    height: 72px;
-    width: 72px;
+  .featured-header-left .header-photo {
+    margin-bottom: 24px;
   }
 }
